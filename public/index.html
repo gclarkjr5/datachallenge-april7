@@ -48,10 +48,9 @@
       $.get(`/yelp`, function (ratings) {
         let heater = [];
         $.each(ratings, function (key, data) {
-
           var latlng = new google.maps.LatLng(data.lat, data.lng);
           heater.push(latlng);
-        })
+        });
         var heatmap = new google.maps.visualization.HeatmapLayer({
           data: heater,
           dissipating: false,
@@ -62,7 +61,7 @@
     };
   </script>
   <!--Need to get API Key from Google Maps for below request-->
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAG9Ic0JYMUcE2h69XmBSbnzaWWw3vD12U&callback=initMap" type="text/javascript"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAG9Ic0JYMUcE2h69XmBSbnzaWWw3vD12U&libraries=visualization&callback=initMap" type="text/javascript"></script>
 </body>
 
 </html>
